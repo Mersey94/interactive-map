@@ -7,24 +7,55 @@
     <title>🗺️Map</title>
     <link rel="stylesheet" href="src/styles.css" />
     <script src="src/script.js" defer></script>
-  </head>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+  <meta charset="utf-8">
+<title>Add a marker using a place name</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+</head>
   <body>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
     <div class="container">
-      <h1>Interactive Map</h1>
+      <h1>Travel Map</h1>
       <div class="title">
         <ul>
-          <li><a class="title-blue" href="#">Offices</a></li>
-          <li><a class="title-red" href="#">Countryside</a></li>
-          <li><a class="title-green" href="#">Playground</a></li>
-          <li><a class="title-yellow" href="#">House</a></li>
-          <li><a class="title-pink" href="#">Industries</a></li>
+          <li><a class="title-blue" href="#">Country</a></li>
+          <li><a class="title-red" href="#">City</a></li>
+          <li><a class="title-green" href="#">Towns</a></li>
+          <li><a class="title-yellow" href="#">Sites</a></li>
+          <li><a class="title-pink" href="#">Photos</a></li>
         </ul>
       </div>
-      <img
+      <div id="map" class="world-map"style='width: 950px; height: 550px;'>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWVyc2V5OTQiLCJhIjoiY2t0dXJ4c3loMGw0NzJwbW5vcHdieWo4byJ9.qUAjthOSkkef9UpuTV098Q';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mersey94/cktus0r581g1b18oaenx1t9mv'
+        });
+        // Add the control to the map.
+        map.addControl(
+        new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+        })
+      );
+        </script>
+      </div>
+      <!-- <img
         id="map"
-        src="http://www.sarabianchi.it/code-images/mappa-interattiva/img/map-original.png"
+        src="http//mapbox://styles/mersey94/cktus0r581g1b18oaenx1t9mv"
       />
-      <map name="map">
+      <map name="map"> -->
         <area
           onmouseover
           onmouseout
